@@ -42,22 +42,3 @@ func TestGetInstance(t *testing.T) {
 	wg.Wait()
 	conn.Close()
 }
-
-func TestDistributeLocker_Lock(t *testing.T) {
-	// Pass a context with a timeout to tell a blocking function that it
-	// should abandon its work after the timeout elapses.
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
-	defer cancel()
-
-	for {
-		select {
-		case <-time.After(1 * time.Second):
-			fmt.Println("overslept")
-		case <-ctx.Done():
-			fmt.Println(ctx.Err()) // prints "context deadline exceeded"
-			return
-		}
-	}
-
-
-}
