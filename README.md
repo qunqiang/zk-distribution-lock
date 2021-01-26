@@ -35,7 +35,7 @@ func demo() {
 	conn,_,err := zk.Connect([]string{"127.0.0.1"}, time.Minute,zk.WithLogInfo(false))
 	if err != nil {
 		panic(err)
-    }
+    	}
 	locker, err := lock.NewLocker(conn, lock.WithBasePath("/test/"))
 	if err != nil {
 		panic(err)
