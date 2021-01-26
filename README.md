@@ -15,7 +15,7 @@ golang 基于 zk 的分布式锁实现方案
 
 #### 安装教程
 ```shell
-go get gitee.com/go-arch/golang-zk-distribution-lock
+go get github.com/qunqiang/zk-distribution-lock
 ```
 
 #### 使用说明
@@ -24,7 +24,7 @@ go get gitee.com/go-arch/golang-zk-distribution-lock
 package demo
 
 import (
-	lock "gitee.com/go-arch/zk-distribution-lock"
+	lock "github.com/qunqiang/zk-distribution-lock"
 	"github.com/samuel/go-zookeeper/zk"
 	"time"
 	"log"
